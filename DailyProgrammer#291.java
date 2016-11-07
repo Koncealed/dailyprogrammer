@@ -10,11 +10,7 @@ class GoldilocksChecker {
 				suitableChairs += i + " ";
 			}
 		}
-		if(suitableChairs == "") {
-			System.out.println("Tell dat bitch to lose some weight there are 0 chairs for her.");
-		} else {
-			System.out.println(suitableChairs);
-		}
+		System.out.println(suitableChairs);
 	} 
 }
 
