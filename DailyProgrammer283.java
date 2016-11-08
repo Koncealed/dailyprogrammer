@@ -23,10 +23,10 @@ class Application
     	System.out.println("Please enter in a a phrase and we will check if it is a Anagram");
     	String anagramTwo = anagrams.nextLine();
     	
-    	if (anagramChecker.anagramCheck(anagramOne, anagramTwo) == true) {
+    	if (anagramChecker.anagramCheck(anagramOne, anagramTwo)) {
     		System.out.println(anagramOne + anagramTwo + " Are Anagrams");
     	}
-    	else if (anagramChecker.anagramCheck(anagramOne, anagramTwo) == false) {
+    	else {
     		System.out.println(anagramOne + anagramTwo + " are NOT anagrams");
     	}
     	
