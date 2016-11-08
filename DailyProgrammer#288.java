@@ -15,7 +15,7 @@ class aliterationChecker {
             }
             else if(!aliterationArray[i].equals(stopWords[counter])) {
                 ++counter;
-                if(counter == 32) { // IF stopWord is not found move onto next word
+                if(counter == 32) { // IF stopWord is not found move onto next word / Stops ArrayOutOfBounds
                     counter = 0;
                     ++i;
                 }
@@ -27,21 +27,20 @@ class aliterationChecker {
                 aliterationString  += aliterationArray[i]  + " ";
             }
         }
-        //aliterationString == removed all stop words
+        
         String[] aliterationNoStopWordsArray = aliterationString.split(" "); //Splits the aliteration into word array
         String testLetterString = aliterationNoStopWordsArray[0]; //This is the letter in which it will test
         char[] testLetterArray = testLetterString.toCharArray();// Converts to char array
-        char testLetter = testLetterArray[0]; // CORRECT DO NOT CHANGE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        char testLetter = testLetterArray[0]; 
         boolean flag = true;
         for(int i = 0;i < aliterationNoStopWordsArray.length && flag == true;++i) {
             String currentTestWordString = aliterationNoStopWordsArray[i];
             char[] currentTestWordChar = currentTestWordString.toCharArray();
             if(testLetter == currentTestWordChar[0]){
                 flag = true;
-            }
-            else if(testLetter != currentTestWordChar[0]) {
-                flag = false;
-            }
+            } else {
+               flag = false;
+              }
         }
         return flag;
     }
@@ -51,11 +50,10 @@ public class aliteration {
 
     public static void main(String[] args) {
         String userInput = "Peter Piper Picked a Peck of Pickled Peppers".toLowerCase();
-        if(aliterationChecker.checkAliteration(userInput) == true) {
+        if(aliterationChecker.checkAliteration(userInput)) {
             System.out.println("This is an aliteration");
-        }
-        else { 
+        } else { 
             System.out.println("This is not an aliteration");
-        }
+          }
     }
 }
