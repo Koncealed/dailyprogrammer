@@ -27,33 +27,21 @@ class aliterationChecker {
                 aliterationString  += aliterationArray[i]  + " ";
             }
         }
-        
         String[] aliterationNoStopWordsArray = aliterationString.split(" "); //Splits the aliteration into word array
-        String testLetterString = aliterationNoStopWordsArray[0]; //This is the letter in which it will test
-        char[] testLetterArray = testLetterString.toCharArray();// Converts to char array
-        char testLetter = testLetterArray[0]; 
-        boolean flag = true;
-        for(int i = 0;i < aliterationNoStopWordsArray.length && flag == true;++i) {
-            String currentTestWordString = aliterationNoStopWordsArray[i];
-            char[] currentTestWordChar = currentTestWordString.toCharArray();
-            if(testLetter == currentTestWordChar[0]){
-                flag = true;
-            } else {
-               flag = false;
-              }
+        char testLetter = aliterationNoStopWordsArray[0].charAt(0); 
+        for(int i = 0;i < aliterationNoStopWordsArray.length;++i) {
+            if(testLetter != aliterationNoStopWordsArray[i].charAt(0)){
+                return false;
+            }
         }
-        return flag;
+        return true;
     }
 }
 
-public class aliteration {
+public class Solution{
 
     public static void main(String[] args) {
         String userInput = "Peter Piper Picked a Peck of Pickled Peppers".toLowerCase();
-        if(aliterationChecker.checkAliteration(userInput)) {
-            System.out.println("This is an aliteration");
-        } else { 
-            System.out.println("This is not an aliteration");
-          }
+        System.out.println(aliterationChecker.checkAliteration(userInput) ? "This is an aliteration" : "This is not an aliteration");
     }
 }
