@@ -5,8 +5,7 @@ def changeWord(word1, word2) :
     for i in range(0,len(list1)) :
         if list1[i] is not list2[i] :
             list1[i] = list2[i]
-            printWord = ''.join(list1)
-            print(printWord)
+            print(''.join(list1))
 
 
 
