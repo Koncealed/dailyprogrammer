@@ -22,13 +22,6 @@ class Application
     	String anagramOne = anagrams.nextLine();
     	System.out.println("Please enter in a a phrase and we will check if it is a Anagram");
     	String anagramTwo = anagrams.nextLine();
-    	
-    	if (anagramChecker.anagramCheck(anagramOne, anagramTwo)) {
-    		System.out.println(anagramOne + anagramTwo + " Are Anagrams");
-    	}
-    	else {
-    		System.out.println(anagramOne + anagramTwo + " are NOT anagrams");
-    	}
-    	
+	System.out.println(anagramChecker.anagramCheck(anagramOne, anagramTwo) : "They are Anagrams" ? "They are NOT Anagrams"); 
     }
 }
